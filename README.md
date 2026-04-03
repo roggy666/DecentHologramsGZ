@@ -1,78 +1,32 @@
-# Decent Holograms
-[![SpigotMC Downloads](https://img.shields.io/spiget/downloads/96927?label=Downloads) 
-![SpigotMC Version](https://img.shields.io/spiget/version/96927?label=Release) 
-![Tested Versions](https://img.shields.io/spiget/tested-versions/96927?label=Supports)](https://www.spigotmc.org/resources/96927/) 
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
->A lightweight yet very powerful hologram plugin with many features and configuration options.
+# DecentHologramsGZ
 
-**Links:**
-- [Modrinth (Download)](https://modrinth.com/plugin/decentholograms)
-- [SpigotMC (Download)](https://www.spigotmc.org/resources/96927/)
-- [Discord (Support)](https://discord.decentsoftware.eu/)
-- [Wiki (Documentation)](https://wiki.decentholograms.eu/)
+Fork of [DecentHolograms](https://github.com/DecentSoftware-eu/DecentHolograms) with added support for Minecraft 26.1 on Paper.
 
-## Support
-We are mostly active on Discord so the best way to get support is joining our [Discord Server](https://discord.decentsoftware.eu). Also, it is okay to report bugs here on GitHub or in the 'Discussion' page on the [Spigot Page](https://decentholograms.eu) of Decent Holograms.
+## Changes from upstream
 
-## Minecraft Limitations
-- Text is always facing the player.
-- Text size or font cannot be changed.
-- Some entities make sounds. It only applies to a few entities like the Warden which makes this heartbeat sound.
-- Icons (#ICON:) are always going to rotate and bob up and down.
-
-## Contributing [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
-Pull requests are welcome. But for major changes, please create an issue to discuss the changes first.
+- Added Paper NMS adapter for MC 26.1 (`nms-paper_v26_1`)
+- Registered `paper_v26_1` version in `Version.java` for `Platform.PAPER`
+- Added `mavenLocal()` and Paper Maven repository to build configuration
+- Added Paper plugin repository to `pluginManagement`
 
 ## Building
-Building DecentHolograms is very simple. All you need is JDK 8+, Gradle, Git and an IDE or Command Line.
 
-1. Clone the project to your machine using Git.
-2. Open the project using your IDE or open a command line at the projects' location.
-3. Run `gradle clean shadowJar` and DecentHolograms will build.
-4. You can find the jar at `./plugin/build/libs/DecentHolograms-VERSION.jar`
+Requires JDK 25 and a locally built [Paper 26.1](https://github.com/PaperMC/Paper) server jar at `../Paper/paper-server/build/libs/`.
 
-## API [![](https://jitpack.io/v/decentsoftware-eu/decentholograms.svg)](https://jitpack.io/#decentsoftware-eu/decentholograms)
-How to get DecentHolograms API into your project:
+1. Clone and build Paper 26.1 first:
+   ```
+   cd ../Paper
+   ./gradlew applyPatches
+   ./gradlew createPaperclipJar
+   ```
+2. Build DecentHolograms:
+   ```
+   ./gradlew shadowJar
+   ```
+3. Jar will be at `plugin/build/libs/DecentHolograms-2.9.10.jar`
 
-> Replace `VERSION` with the current version of DecentHolograms. (Latest release)
+## Original project
 
-<details>
-<summary>Maven</summary>
-
-```xml
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
-```
-
-```xml
-<dependencies>
-    <dependency>
-        <groupId>com.github.decentsoftware-eu</groupId>
-        <artifactId>decentholograms</artifactId>
-        <version>VERSION</version>
-        <scope>provided</scope>
-    </dependency>
-</dependencies>
-```
-</details>
-
-<details>
-<summary>Gradle</summary>
-
-```groovy
-repositories {
-    maven { url 'https://jitpack.io' }
-}
-
-dependencies {
-    compileOnly 'com.github.decentsoftware-eu:decentholograms:VERSION'
-}
-```
-</details>
-
-## bStats
-[![](https://bstats.org/signatures/bukkit/DecentHolograms.svg)](https://bstats.org/plugin/bukkit/DecentHolograms)
+- [SpigotMC](https://www.spigotmc.org/resources/96927/)
+- [Discord](https://discord.decentsoftware.eu/)
+- [Wiki](https://wiki.decentholograms.eu/)

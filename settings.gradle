@@ -12,6 +12,7 @@ pluginManagement {
     repositories {
         mavenCentral()
         maven { url = 'https://maven.fabricmc.net/' }
+        maven { url = 'https://repo.papermc.io/repository/maven-public/' }
         gradlePluginPortal()
     }
 }
@@ -61,3 +62,4 @@ include ':nms:nms-paper_v1_21_R6'
 include ':nms:nms-v1_21_R7'
 include ':nms:nms-paper_v1_21_R7'
 include ':nms:nms-v26_1'
+include ':nms:nms-paper_v26_1'

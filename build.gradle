@@ -5,8 +5,10 @@ subprojects {
     group = 'eu.decentsoftware.holograms'
 
     repositories {
+        mavenLocal()
         mavenCentral()
         maven { url = "https://repo.codemc.io/repository/nms/" }
+        maven { url = "https://repo.papermc.io/repository/maven-public/" }
     }
 
     dependencies {

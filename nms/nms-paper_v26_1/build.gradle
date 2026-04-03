@@ -1,0 +1,25 @@
+repositories {
+    maven { url = "https://libraries.minecraft.net/" }
+}
+
+dependencies {
+    compileOnly files("${rootDir}/../Paper/paper-server/build/libs/paper-server-26.1-R0.1-SNAPSHOT.jar")
+    compileOnly files("${rootDir}/../Paper/paper-api/build/libs/paper-api-26.1-R0.1-SNAPSHOT.jar")
+    compileOnly("io.netty:netty-all:4.1.97.Final")
+    compileOnly("com.google.guava:guava:33.0.0-jre")
+    compileOnly("com.google.code.gson:gson:2.11.0")
+    compileOnly("com.mojang:datafixerupper:8.0.16")
+    compileOnly("org.jetbrains:annotations:24.1.0")
+    compileOnly("net.kyori:adventure-api:4.26.1")
+}
+
+compileJava {
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
